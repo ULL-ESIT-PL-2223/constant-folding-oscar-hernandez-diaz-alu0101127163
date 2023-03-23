@@ -1,10 +1,10 @@
 {
-    "name": "@aluxxx/constant-folding",
-    "author": "aluXXX <aluXXX@ull.edu.es>",
+    "name": "@alu0101127163/constant-folding",
+    "author": "alu0101127163 <alu0101127163@ull.edu.es>",
     "description": "Constant Folding javascript code",
     "scripts": {
         "test": "mocha",
-        "prod-test": "cd ../constant-folding-production-test-aluXXX && npm test",
+        "prod-test": "cd ../constant-folding-production-test-alu0101127163 && npm test",
         "cov": "nyc npm run test",
         "full-cov": "npm run clean && npm i && npm run cov",
         "clean": "rm -rf node_modules package-lock.json",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "github:ULL-ESIT-PL-2021/constant-folding-module-aluXXX"
+        "url": "github:ULL-ESIT-PL-2223/constant-folding-module-alu0101127163"
     },
     "keywords": [
         "ULL",
@@ -22,7 +22,8 @@
     "license": "Unlicense",
     "dependencies": {
         "commander": "^7.1.0",
-        "escodegen": "^1.14.3"
+        "escodegen": "^1.14.3",
+        "espree": "^9.5.0"
     },
     "version": "1.0.0",
     "main": "src/constant-folding.js",
