@@ -27,14 +27,14 @@
         "escodegen": "^1.14.3",
         "espree": "^9.5.0"
     },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "src/constant-folding.js",
     "bin": {
         "cf": "src/constant-folding-cli.js"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
-      },
+    },
     "devDependencies": {
         "chai": "latest",
         "jison": "latest",
