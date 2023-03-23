@@ -20,7 +20,7 @@ const constantFolding = require('constant-folding');
 
 ## Author
 
-aluXXX 
+alu0101127163
 
 ## Tests
 
