@@ -8,11 +8,13 @@
         "cov": "nyc npm run test",
         "full-cov": "npm run clean && npm i && npm run cov",
         "clean": "rm -rf node_modules package-lock.json",
-        "doc": "blah blah"
+        "jsdoc": "jsdoc src -d docs/jsdoc --readme README.md",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs && rm -rf docs/assets && mv docs/.vuepress/dist/* docs && rm -rf docs/.vuepress/dist"
     },
     "repository": {
         "type": "git",
-        "url": "github:ULL-ESIT-PL-2223/constant-folding-module-alu0101127163"
+        "url": "github:ULL-ESIT-PL-2223/constant-folding-oscar-hernandez-diaz-alu0101127163"
     },
     "keywords": [
         "ULL",
@@ -30,6 +32,9 @@
     "bin": {
         "cf": "src/constant-folding-cli.js"
     },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+      },
     "devDependencies": {
         "chai": "latest",
         "jison": "latest",
