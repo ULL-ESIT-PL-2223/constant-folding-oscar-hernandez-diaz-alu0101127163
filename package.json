@@ -30,7 +30,7 @@
         "escodegen": "^1.14.3",
         "espree": "^9.5.0"
     },
-    "version": "1.0.5",
+    "version": "1.0.6",
     "main": "src/constant-folding.js",
     "bin": {
         "cf": "src/constant-folding-cli.js"
