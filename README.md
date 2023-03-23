@@ -16,7 +16,39 @@ const constantFolding = require('constant-folding');
 
 [The documentation of the function](https://ull-esit-pl-2021.github.io/constant-folding-module-aluXXX/).
 
-## Examples
+## Test
+
+Para poder desarrollar nuestras pruebas de producción sobre nuestro módulo npm, primero añadimos la dependencia en el `package.json` y la instalamos con `npm i`. Una vez instalado el módulo creamos los test que queremos probar con la última version del módulo. 
+
+```js
+const constantFolding = require("@alu0101127163/constant-folding");
+const should = require('chai').should();
+
+const Checks = [
+  { text: "[a, b, c].join();", result: "'a,b,c';" },
+  { text: "[a, b, c].join('@');", result: "'a@b@c';" },
+  { text: "[1, 2, 3].length;", result: "3;" },
+  { text: "[1, 2, 3][2-1];", result: "2;" },
+  { text: "[1, 2, 3].shift();", result: "1;" },
+  { text: "[a, b, c].pop();", result: "'c';"},
+  { text: "'abc'[0];", result : "'a';"},
+  { text: "'abc'.charAt();", result: "'a';"},
+  { text: "'abc'.charAt(1);", result: "'b';"},
+  { text: "'abc'.length;", result: "3;"},
+  { text: "'a,b,c'.split(',');", result: "a,b,c;"},
+  { text: "(100 + 23).toString();", result: "'123';" },
+];
+
+describe('constantFolding tests', () => {
+  for (let c of Checks) {
+    it(`Test ${c.text} = ${c.result}`, () => {
+      constantFolding(c.text).should.equal(c.result);
+    });
+  }
+});
+```
+
+Ejecutamos el script `test` y nos mostrará todas las pruebas que hemos creado. Así cada vez que haya una nueva versión del módulo, podemos venir a este repositorio, inicializar las pruebas que creamos necesarias y las probramos para ver si funciona correctamente el módulo implementado con todas nuestras pruebas.
 
 ## Author
 
