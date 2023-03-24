@@ -29,7 +29,8 @@
         "commander": "^7.1.0",
         "escodegen": "^1.14.3",
         "espree": "^9.5.0",
-        "jsdoc": "^4.0.2"
+        "jsdoc": "^4.0.2",
+        "vuepress": "^1.9.9"
     },
     "version": "1.0.6",
     "main": "src/constant-folding.js",
