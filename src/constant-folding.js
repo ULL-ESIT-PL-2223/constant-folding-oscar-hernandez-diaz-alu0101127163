@@ -30,13 +30,38 @@ function constantFolding(code, pattern) {
 			else if (n.type == "MemberExpression" && p.type != "CallExpression") {
 				replaceByMemberExpression(n);
 			}	
+			else if (n.type == "BinaryExpression" && n.left.type == "BinaryExpression" && n.right.type == "BinaryExpression") {
+				replaceByBinaryExpression(n);
+			}
 		},
 	});
 	//deb(t);
 	let c = escodegen.generate(t);
 	//console.error(c);
-	return c;
+	return c;	
+}
 
+function replaceByBinaryExpression(n) {
+	if (n.operator == '+' || n.operator == '-') {
+		if (n.left.operator == '*' && n.right.operator == '*') {
+			if (n.left.left == n.right.left) {
+				let oldOp =  n.operator;
+				n.left.type = "Indentifier";
+				n.operator = "*";
+				n.left.name = n.left.left.name;
+
+				let leftightName = n.left.right.name;
+				let rightightName = n.right.right.name;
+
+				n.right.type = "BinaryExpression";
+				n.right.operator = oldOp;
+				n.right.left = "Indentifier";
+				n.right.right = "Indentifier";
+				n.left.name = leftightName;
+				n.right.name = rightightName;
+			}
+		}
+	}
 }
 
 function replaceByLiteral(n) {
