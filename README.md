@@ -69,7 +69,4 @@ Ejecutamos el script `test` y nos mostrará todas las pruebas que hemos creado. 
 
 ## Author
 
-alu0101127163
-
-## Tests
-
+Oscar Hernanez Diaz
