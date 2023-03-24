@@ -9,6 +9,7 @@
         "full-cov": "npm run clean && npm i && npm run cov",
         "clean": "rm -rf node_modules package-lock.json",
         "jsdoc": "jsdoc src -d docs/jsdoc --readme README.md",
+        "genCov": "c8 --reporter=html --reporter=text npm run test && rm -rf docs/coverage && mv coverage docs/",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs && rm -rf docs/assets && mv docs/.vuepress/dist/* docs && rm -rf docs/.vuepress/dist"
     },
@@ -26,6 +27,7 @@
     ],
     "license": "Unlicense",
     "dependencies": {
+        "c8": "^7.13.0",
         "commander": "^7.1.0",
         "escodegen": "^1.14.3",
         "espree": "^9.5.0",
